@@ -1,0 +1,52 @@
+\input{projekt-header.tex}
+\title{Überwachung des Solarofens mit Arduinos}
+\author{
+  Kevin Dungs \texorpdfstring{\and}{,}
+  Gregor Geßner \texorpdfstring{\and}{,}
+  Carolin Boos \texorpdfstring{\and}{,}
+  Robert Temminghoff
+}
+\begin{document}
+\maketitle
+
+\section{Einleitung}
+Im Rahmen der Sommerakademie 2014 von PeP et al. wurde ein Projekt mit Arduino durchgeführt. In Verbindung mit dem Projekt des Baus eines Solarofens soll ein Temperaturfühler realisiert werden. Zusätzlich werden Leuchtdioden bzw. ein LCD-Display angebracht, um eine Temperaturanzeige zu erhalten.
+
+\section{Vorbereitung}
+Als Vorbereitung wird eine Schaltung entwickelt und gebaut, die in Abbildung \ref{abb.Schaltung} dargestellt ist. Es wird ein Spannungsteiler mit Leuchtdioden realisiert, um verschiedene Temperaturstufen anzuzeigen. Als Vorlage dienten Beispiele aus der Arduino-Anleitung.
+
+%\begin{figure}[h]
+%	\begin{center}
+%		%\includegraphics[scale=0.5]{}h
+%		\caption{Schaltung des Temperaturfühlers}\label{abb.Schaltung}
+%	\end{center}
+%\end{figure}
+
+\section{Kalibration des Fühlers}
+Für die Kalibration des Fühlers wird der Temperaturgradient $T_K = 0.00385 \frac{\text{ppm}}{\text{K}}$ und der Referenzwiderstand von 1000 $\Omega$ bei $0^{\circ}$ C aus der Fühlerbeschreibung (Datenblatt) herangezogen, um aus dem Spannungsoutput des Fühlers die Temperatur zu ermitteln. Folgende Grö\ss en werden berechnet: $U_{R_T}$ als Spannung, die am Temperaturfühler abfällt; $R_T$ als Widerstand des Fühlers, der temperaturabhängig ist, sowie die Temperatur $T$.
+
+\begin{gather*}
+	U_{R_T} = level \cdot \frac{U_{ref}}{1024} \\
+	R_T = \frac{R_1 \left(U_{ref}-U_{R_T}\right)}{U_{R_T}}\\
+	T = \frac{1}{T_K} \left(\frac{R_T}{R_0} - 1\right)
+\end{gather*}
+
+Weil der Output $level$ von Arduino ein Integer-Wert ist, muss dieser mithilfe der Referenzspannung $U_{ref}$ in eine Spannung umgerechnet werden. Der Widerstand $R_1$ ist Bauteil des Spannungsteilers, $R_0$ der Referenzwiderstand des Fühlers von $1 \text{k}\Omega$ bei einer Temperatur von $0^\circ \text{C}$. 
+
+\section{LCD-Anzeige}
+Auf eine LCD-Anzeige wird die ermittelte Temperatur und die Helligkeit angezeigt. Zur Steuerung der Anzeige wird die Bibliothek \textit{LiquidCrystal.h} verwendet, die zum Standardumfang der Arduino IDE gehört.
+
+\section{Einbau des Fühlers}
+Um den Fühler einzubauen, wird er an ein längeres Stück Kabel gelötet. Damit kann der Fühler über eine längere Distanz an den Ofen geschlossen werden, ohne die Elektronik hohen Temperaturen auszusetzen.
+
+
+\section{Probleme und Verbesserungen}
+\begin{itemize}
+	\item Der Temepratursensor PT 1000 ist zwar für Temperaturen bis $500^{\circ}$ C geeignet, jedoch nicht die zum Anschluss verwendeten Kabel, die Platine und der Lötzinn.
+	\item Der Sensor ist in der aktuellen Form nicht wasserdicht und kann daher nicht an alle Proben angebracht werden.
+	\item Für den Anschluss des Temperatursensors wurden bereits 10 Meter Litze verwendet. Sollen auf diese Weise weitere Sensoren angeschlossen werden, ist sehr viel Litze nötig
+	\item Da es keine Gelegenheit zur Datennahme gab, wurde auch noch keine Weiterverarbeitung auf dem PC realisiert. Der Sensor wurde allerdings erfolgreich zur Temperaturmessung in der Nebelkammer genutzt.
+\end{itemize}
+
+\clearpage
+\end{document}

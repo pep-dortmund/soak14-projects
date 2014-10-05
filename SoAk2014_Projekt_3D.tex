@@ -1,0 +1,93 @@
+\input{projekt-header.tex}
+
+\title{3D-Filme}
+\author{Arne}
+
+\begin{document}
+
+\section{Ziel:}
+Kurze Clips in 3D erzeugen mittels der Anaglyph-Technik
+
+\section{Benutztes Material:} 
+\begin{itemize}
+	\item GoPro Hero3 White
+	\item GoPro Hero3 Black
+	\item Farbfilter und Anaglyph-Brillen
+	\item StereoMovie Maker (SMM) (Software, Windows)
+	\item Bino (Software, Mac)
+\end{itemize}
+
+\section{Vorgehen:} 
+\begin{enumerate}
+	\item Suche nach kompatiblen Kameraeinstellungen
+	\item Optimalen Abstand der Kameraabstände zueinander finden
+	\item Nötigen Abstand zum Objekt finden
+\end{enumerate}
+
+\section{Ergebnisse Software:}
+
+\begin{tabular}{l l l}
+  \toprule
+  Programm & Bino & SMM\\
+  \midrule 
+  Positiv & Schnell & Schnitt möglich\\
+          & kompatibel & Verschiebung möglich\\
+          & & Interlace/Chessboard\\
+  Negativ & kein Speichern & Nur für MP1 und MP2\\
+          & kein Schnitt & subjektiv schlechtere Ergebnisse\\
+  Abwendbar für: & Schnelle Kontrolle der Videos & Aufwendigere Clips\\
+  \bottomrule
+\end{tabular}
+
+\emph{Manuelles Verschieben der Videos durch SMM nur bedingt brauchbar}
+
+
+% section 3d_film (end)
+\section{Ergebnisse Video:}
+
+\begin{itemize}
+	\item Unterschiede der Kameramodelle in Farbtiefe, Schärfe und bei hoher Auflösung auch im Blickwinkel 
+	\item Die GoPro Hero3 Black zeigt einen störenden Versatz der Ton- und Bildspur
+	\item Starke Verzeichnung an den Rändern
+	\item Auflösung 720p, FPS 60
+  \item Mindestabstand zum Objektiv ca. 5 Meter, da andernfalls zu starkes \enquote{Ghosting}
+	\item Teilweise Verzögerung der Tonspuren
+	\item Rot- und Blaufilter der 3D-Brille sind nicht mit der Farbe des Monitors kompatibel, sodass es zu "`Ghosting"' kommt
+	\item Die Interlacing-Methode ist möglich, das Ghosting ist stark reduziert, jedoch die Film- und Farbqualität wesentlich schlechter
+\end{itemize}
+
+\section{Ideen:}
+\begin{itemize}
+	\item Rotbild zu stark, evtl. abschwächen
+	\item Mindestabstand einhalten
+	\item Andere Brillenfilter
+	\item Andere 3D-Technik
+	\item Videos mit zusätzlichem Farbfilter aufnehmen
+	\item Andere Kameras ohne Weitwinkelobjektiv (bspw. identische Smartphones) verwenden
+	\item Schwarz-Weiß Videos statt Farbe
+	\item Bessere Bearbeitungssoftware ([Parallel-]Schnitt- und 3D-Programme)
+\end{itemize}
+
+
+\section{Bisherige Umsetzung der Ideen}
+
+\begin{itemize}
+\item Die Verwendung von zusätzlichen Filtern (sowohl eines Roten, wie auch eines komplementären Grünen) führte nicht zu einer Verringerung des Ghostings
+\item Das Einhalten des Mindestabstands führte zum gewünschten Effekt
+\item Indem zwei oder drei 3D-Brillen übereinander getragen werden, kann \enquote{Ghosting} reduziert werden, da die Farbfilter der Brillen per se zu schwach sind.
+\end{itemize}
+
+
+Da die GoPro-Kameras für 3D-Filme offensichtlich nicht geeignet sind, wurden testweise zwei gleiche iPhones verwendet.
+
+\begin{itemize}
+\item Verzeichnung ist kein Problem
+\item Die Einzelvideos der Kameras unterschieden sich nicht merklich
+\item Der Mindestabstand zu den Kameras ist deutlich geringer, sodass auch sich auf die Kamera zu bewegende Objekte gefilmt werden können
+\item Ghosting tritt trotzdem auf, ist aber schwächer
+\item Durch zwei 3D-Brillen, die übereinander getragen werden, können die Farben vollständig gefiltert werden, sodass kein Ghosting auftritt
+\end{itemize}
+
+\textbf{Es konnten sehr gute, bewegte 3D-Clips mithilfe der iPhones erzeugt werden.}
+
+\end{document}
