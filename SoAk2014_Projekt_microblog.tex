@@ -15,48 +15,50 @@ CouchDB}
 \tableofcontents
 
 \section{Einleitung}
-Aus einer ersten Idee, ein mobiles, drahtloses Netzwerk auf einem RaspberryPi
-einzurichten, um damit selbst auf den höchsten österreicher Bergen eine
-gewisse digitale Grundversorgung bereitzustellen ist schnell das Projekt
-eines minimalistischen Blogs entstanden.
-Hiermit sollte eine etwas andere Perspektive SoAk-Dokumentation ermöglicht
-werden, indem jeder Teilnehmer jederzeit seine Eindrücke mitteilen kann.
+Aus einer ersten Idee, ein mobiles, drahtloses Netzwerk auf einem
+\textsc{RaspberryPi} (RasPi) einzurichten, um damit selbst auf den höchsten
+österreicher Bergen eine gewisse digitale Grundversorgung bereitzustellen
+ist schnell das Projekt eines minimalistischen Blogs entstanden.
+Hiermit sollte eine etwas andere Perspektive einer SoAk-Dokumentation
+entstehen, in der jeder Teilnehmer jederzeit seine Eindrücke in der Gruppe
+veröffentlichen kann.
 
 \section{Technische Umsetzung}
-Um die Idee zu realisieren wird ein RaspberryPi-Computer verwendet, der mit
-Hilfe eines USB-Akkus und eines WLAN-Sticks als mobiler Accesspoint dient.
+Um die Idee zu realisieren wird ein RasPi verwendet,
+der mit Hilfe eines USB-Akkus und eines WLAN-Sticks als mobiler
+Accesspoint dient.
 Eine erste Abschätzung für die Laufzeit des Systems bei Akkubetrieb lässt
 eine dauerhafte Nutzung für etwa 7 Stunden erwarten.
-\begin{figure}
+\begin{figure}[h]
   \centering
-  \includegraphics[width=0.5\linewidth]{images/raspi1.jpg}
-  \caption{Mobiler Aufbau des RaspberryPis mit angeschlossenem Akku
+  \includegraphics[width=0.4\linewidth]{images/raspi1.jpg}
+  \caption{Mobiler Aufbau des RasPis mit angeschlossenem Akku
   und WLAN-Dongle.}
   \label{fig:raspi}
 \end{figure}
 
-Das Blogsystem beruht auf dem python-Framework flask, welches eine
-ausgesprochen simple Erstellung einer Website mit allen wichtigen Funktionen
-bietet.
-Die flask-app wird maßgeblich zur Kommunikation mit der CouchDB-Datenbank
-gentzt, wobei es sich um eine objektorientierte Datenbank handelt.
-Der Quellcode des Systems ist auf
-\href{https://github.com/bixel/microblog}{github.com} zugänglich.
+Das Blogsystem beruht auf dem \textsc{python}-Framework \textsc{flask},
+welches die schnelle Erstellung einer Website mit allen wichtigen Funktionen
+ermöglicht.
+Die flask-app wird maßgeblich zur Kommunikation mit der objektorientierten
+\textsc{CouchDB}-Datenbank genutzt.  Der Quellcode des Systems ist auf
+\href{https://github.com/bixel/microblog}{github.com/bixel/microblog}
+zugänglich.
 Die Nutzung einer objektorientierten Datenbank ermöglicht eine besonders
 freie Entwicklung, was für den nachträglichen Einbau von Zusatzfunktionen
 ausgesprochen hilfreich ist.
 
-Das erste Ziel des Systems ist die Speicherung von Text- und Bildbeiträgen
+Das erste Ziel der Software ist die Speicherung von Text- und Bildbeiträgen
 von verschiedenen Nutzern, sowie die chronologische Wiedergabe dieser Beiträge.
-Um die Ressourcenanforderungen an den RaspberryPi zu verkleinern,
-stellt sich das CSS- und JavaScript-Framework bootstrap als sehr hilfreich
-heraus, da eine optisch ansprechende Basiselemente für eine Interaktive
-Webapp, wie dem microblog bietet.
+Für die Erstellung einer ansprechenden, interaktiven Oberfläche
+stellt sich das CSS- und JavaScript-Framework \textsc{bootstrap} mit der 
+JavaScript-Bibliothek \textsc{jQuery} als sehr hilfreich
+heraus.
 
 \section{Ergebnisse}
-Die Nutzung des microblog-Systems stellt sich als voller Erfolg heraus.
+Insgesamt war die Einrichtung des microblogs ein voller Erfolg.
 Über die Dauer der Reise wurden insgesamt 208 Beiträge verfasst.
-Der Erfolgreichste Beitrag war mit insgesamt \num{8} Likes ein Bild
+Der beliebteste Beitrag war mit insgesamt \num{8} Likes ein Bild
 des Teams Astrofotografie.
 Besonders beliebt waren ebenfalls Aufnahmen aus dem Bereich
 \enquote{Speisen und Getränke}.
@@ -66,21 +68,24 @@ lediglich etwa \SI{50}{\percent} der Ladung.
 
 \section{Probleme und Verbesserungsmöglichkeiten}
 Nach der Umsetzung der ersten Mindestanforderungen in einer
-Entwicklungsumgebung stellt sich die Installation auf dem RaspberryPi als
+Entwicklungsumgebung stellt sich die Installation auf dem RasPi als
 langwierige Problemsuche dar.
-Es muss zunächst einige Erfahrung in der Einrichtung der genutzten Software auf
-einem Minicomputer, wie dem RaspberryPi gesammelt werden, bevor das System auch
-zuverlässig arbeitet.
+Es musste zunächst einige Erfahrung in der Einrichtung der genutzten
+Software auf einem Minicomputer, wie dem RasPi gesammelt werden,
+bevor das System zuverlässig arbeitete.
 
 Noch während der Anreise wurden dem System weitere Features, wie eine
-\enquote{Likefunktion} und der Möglichkeit, Beiträge zu verstecken
+\enquote{Likefunktion} und die Möglichkeit, Beiträge zu verstecken
 eingearbeitet.
 Insgesamt stellte sich jedoch die Pflege des Systems bei laufendem Betrieb als
-zu zeitintensiv für eine solche Reise heraus, weshalb die unzählichen
--- teilweise guten, teilweise spaßigen -- Nachfragen nach neuen Funktionen
-auf einen späteren Zeitpunkt verschoben werden musste.
+zu zeitintensiv für eine solche Reise heraus, weshalb die Umsetzung der
+unzähligen -- gute und spaßige -- Anregungen für neue Funktionen
+auf einen späteren Zeitpunkt verschoben werden mussten.
 
-Nach Ankunft zeigte sich zudem, dass die Leistung des RaspberryPi nach einiger
+Nach Ankunft zeigte sich zudem, dass die Leistung des RasPi nach einiger
 Nutzung des Systems an dessen Grenzen stoß. Besonders die WLAN-Funktionalität
-war für die Räumlichkeiten nicht ausreichend.
+war für die Räumlichkeiten nicht ausreichend und musste durch externe Router
+verstärkt werden, was weitere Schwierigkeiten mit dem benutzten DNS-Server
+mit sich brachte und insgesamt die Benutzbarkeit des microblogs reduziert hat.
+
 \end{document}
