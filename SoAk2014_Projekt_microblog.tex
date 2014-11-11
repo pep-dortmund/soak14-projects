@@ -1,0 +1,59 @@
+\input{projekt-header.tex}
+
+\title{Entwicklung eines mobil lauffähigen microblog-Systems mit flask und
+CouchDB}
+\subtitle{Ein Projekt der PeP et Al. Sommerakademie 2014}
+\date{24. -- 31. August 2014}
+
+\author{
+    Kevin Heinicke
+}
+
+\begin{document}
+
+\maketitle
+\tableofcontents
+
+\section{Einleitung}
+Aus einer ersten Idee, ein mobiles, drahtloses Netzwerk auf einem RaspberryPi
+einzurichten, um damit selbst auf den höchsten österreicher Bergen eine
+gewisse digitale Grundversorgung bereitzustellen ist schnell das Projekt
+eines minimalistischen Blogs entstanden.
+Hiermit sollte eine etwas andere Perspektive SoAk-Dokumentation ermöglicht
+werden, indem jeder Teilnehmer jederzeit seine Eindrücke mitteilen kann.
+
+\section{Technische Umsetzung}
+Um die Idee zu realisieren wird ein RaspberryPi-Computer verwendet, der mit
+Hilfe eines USB-Akkus und eines WLAN-Sticks als mobiler Accesspoint dient.
+Eine erste Abschätzung für die Laufzeit des Systems bei Akkubetrieb lässt
+eine dauerhafte Nutzung für etwa 7 Stunden erwarten.
+\begin{figure}
+  \centering
+  \includegraphics[width=0.5\linewidth]{images/raspi1.jpg}
+  \caption{Mobiler Aufbau des RaspberryPis mit angeschlossenem Akku
+  und WLAN-Dongle.}
+  \label{fig:raspi}
+\end{figure}
+
+Das Blogsystem beruht auf dem python-Framework flask, welches eine
+ausgesprochen simple Erstellung einer Website mit allen wichtigen Funktionen
+bietet.
+Die flask-app wird maßgeblich zur Kommunikation mit der CouchDB-Datenbank
+gentzt, wobei es sich um eine objektorientierte Datenbank handelt.
+Der Quellcode des Systems ist auf
+\href{https://github.com/bixel/microblog}{github.com} zugänglich.
+Die Nutzung einer objektorientierten Datenbank ermöglicht eine besonders
+freie Entwicklung, was für den nachträglichen Einbau von Zusatzfunktionen
+ausgesprochen hilfreich ist.
+
+Das erste Ziel des Systems ist die Speicherung von Text- und Bildbeiträgen
+von verschiedenen Nutzern, sowie die chronologische Wiedergabe dieser Beiträge.
+
+\section{Probleme und Verbesserungsmöglichkeiten}
+Nach der Umsetzung der ersten Mindestanforderungen in einer
+Entwicklungsumgebung stellt sich die Installation auf dem RaspberryPi als
+langwierige Problemsuche dar.
+Es muss zunächst einige Erfahrung in der Einrichtung der genutzten Software auf
+einem Minicomputer, wie dem RaspberryPi gesammelt werden, bevor das System auch
+zuverlässig arbeitet.
+\end{document}

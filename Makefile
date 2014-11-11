@@ -3,7 +3,7 @@ TEXOPTIONS = --interaction=batchmode \
 			 --halt-on-error
 
 PROJECTS = 3D Arduino Astro Nebelkammer Wasserrakete\
-		   Solarkocher Solarofen
+		   Solarkocher Solarofen microblog
 
 FILES = $(addprefix SoAk2014_Projekt_, $(PROJECTS))
 DOCS =  $(addprefix build/, $(addsuffix .pdf, $(FILES)))
