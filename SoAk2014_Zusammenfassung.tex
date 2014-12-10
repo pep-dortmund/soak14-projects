@@ -1,0 +1,163 @@
+\documentclass[
+  bibliography=totoc,     % Literatur im Inhaltsverzeichnis
+  captions=tableheading,  % Tabellenüberschriften
+  titlepage=firstiscover, % Titelseite ist Deckblatt
+  twocolumn,
+]{scrartcl}
+
+\usepackage{fixltx2e}
+\usepackage[aux]{rerunfilecheck}
+
+\usepackage{polyglossia}
+\setmainlanguage{german}
+
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{mathtools}
+
+\usepackage{fontspec}
+\defaultfontfeatures{Ligatures=TeX}
+
+\usepackage[
+  math-style=ISO,
+  bold-style=ISO,
+  sans-style=italic,
+  nabla=upright,
+  partial=upright,
+]{unicode-math}
+
+\usepackage[autostyle]{csquotes}
+
+\usepackage[
+  locale=DE,                   % deutsche Einstellungen
+  separate-uncertainty=true,   % Immer Fehler mit \pm
+  per-mode=symbol-or-fraction, % m/s im Text, sonst Brüche
+]{siunitx}
+
+\usepackage[version=3]{mhchem}
+
+\usepackage{xfrac}
+
+\usepackage[section, below]{placeins}
+\usepackage[
+  labelfont=bf,        % Tabelle x: Abbildung y: ist jetzt fett
+  font=small,          % Schrift etwas kleiner als Dokument
+  width=0.9\linewidth, % maximale Breite einer Caption schmaler
+  format=plain,
+]{caption}
+\usepackage{subcaption}
+\usepackage{graphicx}
+\usepackage{grffile}
+
+\usepackage{float}
+\floatplacement{figure}{htb}
+\floatplacement{table}{htb}
+
+\usepackage{booktabs}
+
+\usepackage[
+  unicode,
+  pdfusetitle,    % Titel, Autoren und Datum als PDF-Attribute
+  pdfcreator={},  % PDF-Attribute säubern
+  pdfproducer={}, % "
+]{hyperref}
+\usepackage{bookmark}
+\usepackage[shortcuts]{extdash}
+
+\title{Projekt-Dokumentation}
+\subtitle{Pep et. Al. Sommerakademie}
+\date{24. -- 31. August 2014}
+
+\author{Johannes Bieker und Henning Moldenhauer}
+
+\begin{document}
+\maketitle
+\clearpage
+
+FOTOS
+
+\section{3D-Filme}
+Im Rahmen der diesjährigen Sommerakademie gab es die Idee 3D-Filme zu erstellen.
+Um einen dreidimensionalen Effekt zu erhalten, muss das selbe Objekt aus zwei verschiedenen Winkeln betrachtet werden.
+Damit der Effekt möglichst realistisch wirkt, sollte der Abstand der beiden Kameras dem Abstand menschlicher Augen entsprechen.
+Es standen dazu zwei GoPros, Farbfilter und die nötige Software (StereoMovie Maker, Bino) zur Verfügung.\\
+\\
+Die Problemstellung lag auf der Suche nach korrekten Kameraeinstellungen und notwendigem Abstand zwischen Objekt und Kamera.\\
+\\
+Es zeigte sich, dass zwingend auf baugleiche Kameras zu achten ist, was bei den verwendeten GoPros nicht der Fall war.
+Durch die ungleiche Bauweise wurden Farben unterschiedlich wiedergegeben, sodass Ghosting entstand.
+Der Mindestabstand von Objekt zu den Kameras sollte 5 Meter betragen, da auch hier sonst wieder verstärkt Ghosting zu beobachten war.
+
+\section{Temperaturkontrolle mit Arduinos}
+\label{Temperatursensor}
+Ziel dieses Projektes war es eine Temperaturüberwachung des Solarofens zu realisieren.
+Wichtig war dabei die korrekte Kalibration des Temperatursensors.
+Zur leichteren Bedienung sollte die Temperatur mittels LCD-Display dargestellt werden.\\
+\\
+Als Problem stellte sich heraus, dass im Solarbrenner Temperaturen größer der Lotschmelztemperatur erreicht werden können.
+Temperaturen dieser Art kann der Sensor zwar messen, jedoch lösen sich dann die Kabelverbindungen ab.\\
+\\
+Der Sensor konnte noch nicht am Brenner verwendet werden, wurde jedoch bereits bei der Temperaturkontrolle der Nebelkammer eingesetzt.
+
+\section{Astrofotografie-Nachführung}
+Bereits auf der letzten Sommerakademie wurde damit begonnen astronomische Objekte zu fotografieren.
+Um längere Belichtungszeiten zu erreichen und somit auch lichtschwächere Objekte beobachten zu können, wurde in diesem Jahr eine mechanische Nachführung gebaut.
+Der einfachste Typ dieser Nachführungen ist als Barndoor-Montierung bekannt.\\
+\\
+Als problematisch stellte sich die nicht ideale Krümmung der per Hand gebogenen Gewindestange heraus.
+Eine weitere Schwierigkeit war die Ausrichtung der Drehachse der Nachführung auf den Himmelsnordpol.
+Hier ließen sich durch eine optimierte Zielvorrichtung bessere Bilder aufnehmen.\\
+\\
+Mit der Nachführung lassen sich jedoch bereits Belichtungszeiten von 8 Minuten bei 11 mm Brennweite erstellen.
+Im letzten Jahr, ohne Nachführung, ließ sich nur eine Belichtungszeit von 15 Sekunden bei 16 mm erreichen.
+
+\section{Nebelkammer}
+Der Bau einer Nebelkammer sollte ein weiteres Projekt der diesjährgen Sommerakademie darstellen.
+Ziel war der Nachweis geladener Teilchen durch Beobachtung ihrer Spuren in einem Isopropanolnebel.\\
+% folgenden Satz noch mal anschauen/verändern
+Damit sich ein Nebel ausbildet, wurde eine stickstoffgekühlte Metallplatte am Boden eines umgekehrten Aquariums verwendet.\\
+\\
+Verbessern ließe sich die Abdichtung der Kammer, sowie die Verwendung einer schwarz lackierten Metallplatte.
+Statt der Stickstoffkühlung ließe sich die Kammer auch über Peltierelemente kühlen.
+Um mehr Spuren zu beobachten, könnte man eine radioaktive Quelle verwenden.
+
+\section{microblog}
+Aus der Idee mit Hilfe eines RasPi ein mobiles drahtloses Netzwerk einzurichten, entstand schnell die Notwendigkeit einer geeigneten Kommunikationsplattform.
+Das primäre Ziel der Software war die Speicherung von Text- und Bildbeiträgen von verschiedenen Nutzern, sowie die chronologische Wiedergabe dieser Beiträge.
+Zusätzliche Funktionen wie das Liken oder das Verstecken von Nachrichten wurden ebenfalls implementiert.\\
+\\
+Die Mobilität des Systems wurde unter Verwendung eines USB-Akkus bei der Wanderung auf die Mittagsspitze erfolgreich getestet.\\
+\\
+Die WLAN-Funktionalität des RasPi war nicht ausreichend und musste in den gegebenen Räumlichkeiten mit einem externen Router verstärkt werden.
+Weiterführende Entwicklungen des Projektes waren aufgrund von Zeitmangel nicht möglich.
+
+\section{Wasserrakete}
+Dieses Projekt war eine Weiterentwicklung der Wasserrakete aus dem letzten Jahr.
+Die Absicht war die Rakete höher fliegen zu lassen und damit länger in der Luft zu halten.\\
+\\
+Es wurden zwei mögliche Optimierungen für die Rakete ausprobiert:\\
+Zur Minderung der Fallgeschwindigkeit, damit die Rakete beim Landen nicht beschädigt wird, wurde ein Fallschirm angebracht.
+Dieser verringerte die Flughöhe der Rakete jedoch sehr.\\
+Damit die Rakete eine bessere Flugbahn beschrieb, wurde ein sich selbsständig ausfahrendes Leitwerk montiert.
+Unter Verwendung des Leitwerks konnte die Rakete größere Höhen erreichen.\\
+\\
+Probleme bereiteten die nicht druckbeständigen Klebestellen, sowie ein unkontrollierter Start bei 5 bar und eine nicht zuverlässige Entfaltung des Fallschirms.
+
+\section{Solarkocher}
+Ziel war es mittels Sonnenlicht kochen zu können.\\
+Verwendet wurde dazu eine mit Spiegelfolie überzogene Satellitenschüssel, die auf einem Holzständer montiert ist.
+Sie ließ sich in ihrer Neigung verstellen.\\
+\\
+Der Kocher war ein voller Erfolg.
+Es gelang Wasser in einer Dose zum kochen zu bringen und den Flammpunkt von Holz zu überschreiten.
+Letzteres lässt auf eine Temperatur von bis zu 300$^\circ$C im Fokus des Kochers schließen (beachte \ref{Temperatursensor}).
+
+\section{Solarofen}
+Auch dieses Projekt war eine Fortführung eines letztjährigen Projektes.\\
+Es sollte ein Ofen aus einer Kiste gebaut werden.
+Mittels eines Spiegels wurde Sonnenlicht durch einen Glasdeckel in diesen reflektiert, sodass sich das Innere des Ofens erwärmte.\\
+\\
+Das Innere der Kiste wurde mit geschwärzten Aluminiumplatten ausgekleidet, damit einfallende Strahlung absorbiert wird.
+Die erhoffte Temperatursteigerung blieb aus.\\
+Für einen Langzeittest des Ofens gab es nicht ausreichend Sonnenstunden.
+\end{document}

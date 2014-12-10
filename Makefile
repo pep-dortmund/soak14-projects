@@ -21,3 +21,7 @@ build:
 
 clean:
 	rm -rf build
+
+summary: 
+	lualatex $(TEXOPTIONS) SoAk2014_Zusammenfassung.tex
+	lualatex $(TEXOPTIONS) SoAk2014_Zusammenfassung.tex
