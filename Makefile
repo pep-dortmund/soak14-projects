@@ -10,7 +10,7 @@ DOCS =  $(addprefix build/, $(addsuffix .pdf, $(FILES)))
 
 
 
-all: $(DOCS) build/SoAk2014_ProjektDoku.pdf
+all: $(DOCS) build/SoAk2014_Zusammenfassung.pdf
 
 build/%.pdf: %.tex | build
 	lualatex $(TEXOPTIONS) $^ && echo
